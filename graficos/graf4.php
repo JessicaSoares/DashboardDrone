@@ -2,7 +2,7 @@
 
 include 'conexao/conexao.php';
 
-$sql = "SELECT  RTT_Orquestrador_Drone_VM01, RTT_Orquestrador_Drone_VM02 , Memoria_VM01 , idDados FROM dadosbd2_drone ORDER BY idDados limit 10";
+$sql = "SELECT  CPU_VM01, CPU_VM02 , Memoria_VM01 , idDados FROM dadosbd2_drone ORDER BY idDados limit 10";
 $buscar = mysqli_query($conexao,$sql);
 
 #chart.js - Preparando valores#
@@ -14,8 +14,8 @@ $idDados = '';
 
 while ($dados = mysqli_fetch_array($buscar)) {
 				
-	$RTT_vm01 = $RTT_vm01 . '"' . $dados['RTT_Orquestrador_Drone_VM01'] . '",';
-	$RTT_vm02 = $RTT_vm02 . '"' . $dados['RTT_Orquestrador_Drone_VM02'] . '",';
+	$RTT_vm01 = $RTT_vm01 . '"' . $dados['CPU_VM01'] . '",';
+	$RTT_vm02 = $RTT_vm02 . '"' . $dados['CPU_VM02'] . '",';
 	$Memoria_VM01 = $Memoria_VM01 . '"' . $dados['Memoria_VM01'] . '",';
 	$idDados = $idDados . '"' . $dados['idDados'] . '",';
     
@@ -43,11 +43,11 @@ while ($dados = mysqli_fetch_array($buscar)) {
 <body>
 
 <div class="container" style="background-color: #F3F3F3">
-<canvas id="Linha"></canvas>
+<canvas id="Linha3"></canvas>
 </div>
 
 <script type="text/javascript">
-	var ctx = document.getElementById('Linha').getContext('2d');
+	var ctx = document.getElementById('Linha3').getContext('2d');
 	var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {

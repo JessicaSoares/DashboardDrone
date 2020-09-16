@@ -62,6 +62,21 @@ echo $agora;
 <?php  include 'graficos/graf2.php'; ?>
 
 </div>
+  </div>
+
+</div>
+
+<div class = "container-fluid" style="margin-top: 40px">
+<div class = "row">
+  <div class = "col-md-6">
+  <?php  include 'graficos/graf3.php'; ?>
+</div>
+<div class="col-md-6">
+
+</div>
+</div>
+
+
 </div>
 
 
