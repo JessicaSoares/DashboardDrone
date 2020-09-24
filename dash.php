@@ -8,7 +8,8 @@
     <meta name="generator" content="Jekyll v4.1.1">
     <title>Dashboard Template · Bootstrap</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div id="setTime"></div>
   <body>
 
 <div class="container-fluid" >
@@ -24,12 +25,12 @@
           </li>
 
         </ul>
-
+        <div id="setTime">
         <?php 
 
 $agora = date('d/m/Y H:i');
 echo $agora;
-?>
+?> </div>
 
       </div>
       
@@ -56,9 +57,16 @@ echo $agora;
   <div class = "container-fluid" style="margin-top: 40px">
   <div class = "row">
   <div class = "col-md-6">
+  <div class="alert alert-primary" role="alert">
+  <p style="text-align:center"> <b>Tempo de processamento</b></p>
+
   <?php  include 'graficos/graf1.php'; ?>
 </div>
+</div>
 <div class="col-md-6">
+<div class="alert alert-primary" role="alert">
+  <p style="text-align:center"> <b>Memória</b></p>
+
 <?php  include 'graficos/graf2.php'; ?>
 
 </div>
@@ -69,6 +77,9 @@ echo $agora;
 <div class = "container-fluid" style="margin-top: 40px">
 <div class = "row">
   <div class = "col-md-6">
+  <div class="alert alert-primary" role="alert">
+  <p style="text-align:center"> <b>CPU</b></p>
+
   <?php  include 'graficos/graf3.php'; ?>
 </div>
 <div class="col-md-6">
@@ -78,7 +89,6 @@ echo $agora;
 
 
 </div>
-
 
 
 

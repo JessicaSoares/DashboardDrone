@@ -2,7 +2,7 @@
 
 include 'conexao/conexao.php';
 
-$sql = "SELECT  Memoria_VM01, Memoria_VM02 , idDados FROM dadosbd2_drone ORDER BY idDados limit 10";
+$sql = "SELECT  Memoria_VM01, Memoria_VM02 , idDados FROM dadosbd2_drone ORDER BY idDados DESC limit 10";
 $buscar = mysqli_query($conexao,$sql);
 
 #chart.js - Preparando valores#

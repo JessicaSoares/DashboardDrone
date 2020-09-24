@@ -2,7 +2,7 @@
 
 include 'conexao/conexao.php';
 
-$sql = "SELECT  RTT_Orquestrador_Drone_VM01, RTT_Orquestrador_Drone_VM02 , Memoria_VM01 , idDados FROM dadosbd2_drone ORDER BY idDados limit 10";
+$sql = "SELECT  RTT_Orquestrador_Drone_VM01, RTT_Orquestrador_Drone_VM02 , Memoria_VM01 , idDados FROM dadosbd2_drone  ORDER BY idDados DESC limit 10";
 $buscar = mysqli_query($conexao,$sql);
 
 #chart.js - Preparando valores#
@@ -38,6 +38,7 @@ while ($dados = mysqli_fetch_array($buscar)) {
     <script src="js/jquery.min.js"></script>
     <script src="js/Chart.min.js"></script>
 
+
  
 </head>
 <body>
@@ -49,6 +50,7 @@ while ($dados = mysqli_fetch_array($buscar)) {
 <script type="text/javascript">
 	var ctx = document.getElementById('Linha').getContext('2d');
 	var myLineChart = new Chart(ctx, {
+
     type: 'line',
     data: {
     		labels:[<?php echo $idDados; ?>],
@@ -78,6 +80,7 @@ while ($dados = mysqli_fetch_array($buscar)) {
     	scales: {scales:{yAxes: [{beginAtZero: false}], xAxes : [{autoskip: true, maxTicketsLimit: 20 }]}},
     	tooltips: {mode: 'index'},
     	legend:{display: true,position: 'top', labels:{fontColor: 'rgb(0,0,0)',fontSize: 16}}
+		
     }
 
 });
